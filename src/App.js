@@ -1,30 +1,16 @@
 import './App.css';
-
-const Person = (props) => {
-  return (
-    <>
-    <h1>Name: {props.name}</h1>
-    <h2>Last Name: {props.lastName}</h2>
-    <h2>Age: {props.age}</h2>
-    <br></br>
-    </>
-  )
-}
+import {useState} from 'react';
 
 const App = () => {
-  const name = null;
-  const isNameShowing = false;
+  // This is a hook
+  const [counter, setCounter] = useState(0);
+
   return (
     <div className="App">
-      <Person 
-        name='John' 
-        lastName={'Doe'} a
-        ge={25} 
-      />
-      <Person name = 'Mary' lastName='Smith' age={20 + 10}/>
-    
-      
-      
+      <br></br>
+      <button onClick={() => setCounter((prevCount) => prevCount - 1)}> - </button>
+      <h1> {counter} </h1>
+      <button onClick={() => setCounter(((prevCount) => prevCount + 1))}> + </button>
     </div>
   );
 }
